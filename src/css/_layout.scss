@@ -1,1 +1,40 @@
-
+body {
+  margin: 0;
+}
+.topheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3%;
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}
+nav {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  ul {
+    display: flex;
+    padding-left: 0;
+    justify-content: space-between;
+  }
+}
+.reviewcontainer {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      width: 650px;
+    }
+  }
+}
+footer {
+  padding: 2%;
+}
