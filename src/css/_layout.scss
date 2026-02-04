@@ -1,11 +1,49 @@
-body {
-  margin: 0;
+@use "sass:color";
+
+$primary-background-color: rgb(222, 211, 226);
+$darker-primary-background-color: color.scale(
+  rgb(222, 211, 226),
+  $lightness: -30%
+);
+$complementary-color: color.complement(rgb(222, 211, 226));
+$saturated-color: color.scale(rgb(222, 211, 226), $saturation: 70%);
+
+%centerchild {
+  margin-left: auto;
+  margin-right: auto;
 }
-.topheader {
+
+%centercontentwithflex {
   display: flex;
   align-items: center;
+}
+
+%primarycolorused {
+  background-color: $primary-background-color;
+}
+
+%padding {
+  padding: 2%;
+}
+
+%spacebetweencontent {
+  margin-bottom: 60px;
+}
+
+%links {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  background-color: $darker-primary-background-color;
+}
+.topheader {
+  @extend %centercontentwithflex;
+  @extend %padding;
+  @extend %primarycolorused;
+  @extend %spacebetweencontent;
   justify-content: space-around;
-  padding: 3%;
   img {
     width: 250px;
     height: 250px;
@@ -13,28 +51,43 @@ body {
 }
 nav {
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2%;
+  @extend %centerchild;
+  @extend %padding;
+  @extend %spacebetweencontent;
+  background-color: $complementary-color;
+  border-radius: 20px;
   ul {
     display: flex;
     padding-left: 0;
     justify-content: space-between;
+    a {
+      color: black;
+      text-decoration: none;
+    }
   }
 }
-.reviewcontainer {
+section {
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  @extend %centerchild;
   article {
-    display: flex;
+    @extend %centercontentwithflex;
+    @extend %spacebetweencontent;
+    @extend %padding;
     flex-direction: column;
-    align-items: center;
+    border-radius: 20px;
+    background-color: $saturated-color;
     p {
       width: 650px;
     }
   }
 }
 footer {
-  padding: 2%;
+  @extend %padding;
+  @extend %primarycolorused;
+}
+.activechoice {
+  @extend %links;
+}
+a:hover {
+  @extend %links;
 }
