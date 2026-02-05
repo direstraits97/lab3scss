@@ -13,6 +13,7 @@ body {
 h1 {
   font-family: $font-title;
   font-size: 3rem;
+  text-align: center;
 }
 h2 {
   font-family: $font-title;
@@ -34,4 +35,22 @@ nav {
 }
 p {
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .ingress {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
 }

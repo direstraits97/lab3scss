@@ -71,8 +71,11 @@ section {
     flex-direction: column;
     border-radius: 20px;
     background-color: $saturated-color;
+    img {
+      width: 100%;
+    }
     p {
-      width: 650px;
+      width: 90%;
     }
   }
 }
@@ -85,6 +88,24 @@ footer {
 }
 a:hover {
   text-decoration: underline;
+}
+.show {
+  right: 0;
+}
+#openmenu {
+  display: none;
+  border: none;
+  background: none;
+  img {
+    width: 110px;
+    height: 110px;
+  }
+}
+#closemenu {
+  @extend #openmenu;
+}
+#smallscreenheading {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -109,5 +130,58 @@ a:hover {
   }
   .activechoice {
     color: $primary-text-color;
+  }
+}
+
+@media (max-width: 1024px) {
+  section {
+    width: 80%;
+  }
+  .topheader {
+    justify-content: space-between;
+  }
+  #bigscreenheading {
+    display: none;
+  }
+  #smallscreenheading {
+    display: block;
+  }
+  #openmenu {
+    display: block;
+  }
+  #closemenu {
+    @extend #openmenu;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    border-radius: 0;
+    right: -110%;
+    z-index: 10;
+    transition: right 300ms ease-out;
+    height: 100vh;
+    width: 100vw;
+    ul {
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 0;
+      height: 100vh;
+      justify-content: space-evenly;
+      a {
+        margin-right: 3rem;
+      }
+    }
+  }
+  .activechoice {
+    text-decoration: none;
+  }
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 175px;
+    height: 175px;
+  }
+  section {
+    width: 90%;
   }
 }

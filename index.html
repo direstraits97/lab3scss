@@ -20,10 +20,23 @@
     <header>
       <div class="topheader">
         <img class="logo" src="/bilder/logoSCSS.svg" alt="" />
-        <h1>Mitt SASS-projekt</h1>
+        <h1 id="bigscreenheading">Mitt SASS-projekt</h1>
+        <button
+          id="openmenu"
+          aria-label="Öppna meny"
+          aria-expanded="false"
+          aria-controls="navbar"
+        >
+          <img src="/bilder/hamburgerblack.svg" alt="" />
+        </button>
       </div>
-      <nav>
+      <nav id="navbar">
         <ul>
+          <li>
+            <button id="closemenu" aria-label="Stäng meny">
+              <img src="/bilder/closehamburgerblack.svg" alt="" />
+            </button>
+          </li>
           <li class="activechoice"><a href="/">Startsida</a></li>
           <li><a href="/sass">SASS</a></li>
           <li><a href="#">Fields of Mistria</a></li>
@@ -33,6 +46,7 @@
       </nav>
     </header>
     <main>
+      <h1 id="smallscreenheading">Mitt SASS-projekt</h1>
       <section>
         <h2>Några tankar om två farming-simulators</h2>
         <article>
