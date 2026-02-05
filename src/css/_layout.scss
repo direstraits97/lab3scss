@@ -7,6 +7,15 @@ $darker-primary-background-color: color.scale(
 );
 $complementary-color: color.complement(rgb(222, 211, 226));
 $saturated-color: color.scale(rgb(222, 211, 226), $saturation: 70%);
+$primary-text-color: black;
+
+$dark-mode-primary-background-color: rgb(59, 59, 59);
+$dark-mode-darker-primary-background-color: color.scale(
+  rgb(59, 59, 59),
+  $lightness: -50%
+);
+$dark-mode-complementary-color: color.scale(rgb(59, 59, 59), $lightness: 40%);
+$dark-mode-primary-text-color: white;
 
 %centerchild {
   margin-left: auto;
@@ -18,20 +27,9 @@ $saturated-color: color.scale(rgb(222, 211, 226), $saturation: 70%);
   align-items: center;
 }
 
-%primarycolorused {
-  background-color: $primary-background-color;
-}
-
-%padding {
-  padding: 2%;
-}
-
-%spacebetweencontent {
+%paddingandspace {
   margin-bottom: 60px;
-}
-
-%links {
-  text-decoration: underline;
+  padding: 2%;
 }
 
 body {
@@ -40,20 +38,18 @@ body {
 }
 .topheader {
   @extend %centercontentwithflex;
-  @extend %padding;
-  @extend %primarycolorused;
-  @extend %spacebetweencontent;
+  @extend %paddingandspace;
+  background-color: $primary-background-color;
   justify-content: space-around;
-  img {
-    width: 250px;
-    height: 250px;
-  }
+}
+.logo {
+  width: 250px;
+  height: 250px;
 }
 nav {
   width: 60%;
   @extend %centerchild;
-  @extend %padding;
-  @extend %spacebetweencontent;
+  @extend %paddingandspace;
   background-color: $complementary-color;
   border-radius: 20px;
   ul {
@@ -71,8 +67,7 @@ section {
   @extend %centerchild;
   article {
     @extend %centercontentwithflex;
-    @extend %spacebetweencontent;
-    @extend %padding;
+    @extend %paddingandspace;
     flex-direction: column;
     border-radius: 20px;
     background-color: $saturated-color;
@@ -82,12 +77,37 @@ section {
   }
 }
 footer {
-  @extend %padding;
-  @extend %primarycolorused;
+  padding: 2%;
+  background-color: $primary-background-color;
 }
 .activechoice {
-  @extend %links;
+  text-decoration: underline;
 }
 a:hover {
-  @extend %links;
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark-mode-darker-primary-background-color;
+    color: $dark-mode-primary-text-color;
+  }
+  .topheader {
+    background-color: $dark-mode-primary-background-color;
+  }
+  nav {
+    background-color: $dark-mode-complementary-color;
+  }
+  section {
+    article {
+      background-color: $dark-mode-complementary-color;
+      color: $primary-text-color;
+    }
+  }
+  footer {
+    background-color: $dark-mode-primary-background-color;
+  }
+  .activechoice {
+    color: $primary-text-color;
+  }
 }

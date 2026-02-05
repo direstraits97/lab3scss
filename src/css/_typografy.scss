@@ -1,10 +1,6 @@
 $font-title: "Sour Gummy", sans-serif;
 $font-content: "Zalando Sans", sans-serif;
 
-%titlefont {
-  font-family: $font-title;
-}
-
 %titlefontsamesize {
   font-family: $font-title;
   font-size: 1.5rem;
@@ -15,11 +11,11 @@ body {
   line-height: 1.75em;
 }
 h1 {
-  @extend %titlefont;
+  font-family: $font-title;
   font-size: 3rem;
 }
 h2 {
-  @extend %titlefont;
+  font-family: $font-title;
   font-size: 2rem;
   text-align: center;
 }
