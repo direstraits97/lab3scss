@@ -1,0 +1,56 @@
+$font-title: "Sour Gummy", sans-serif;
+$font-content: "Zalando Sans", sans-serif;
+
+%titlefontsamesize {
+  font-family: $font-title;
+  font-size: 1.5rem;
+}
+
+body {
+  font-family: $font-content;
+  line-height: 1.75em;
+}
+h1 {
+  font-family: $font-title;
+  font-size: 3rem;
+  text-align: center;
+}
+h2 {
+  font-family: $font-title;
+  font-size: 2rem;
+  text-align: center;
+}
+h3 {
+  @extend %titlefontsamesize;
+  text-align: center;
+}
+nav {
+  ul {
+    @extend %titlefontsamesize;
+    list-style: none;
+  }
+}
+.ingress {
+  font-size: 1.2rem;
+}
+p {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .ingress {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}

@@ -14,10 +14,10 @@ export default defineConfig({
   plugins: [
     ViteImageOptimizer({
       png: {
-        quality: 80,
+        quality: 75,
       },
       avif: {
-        quality: 70,
+        quality: 65,
       },
     }),
   ],
