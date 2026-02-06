@@ -1,25 +1,24 @@
 <!doctype html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/css/main.scss" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/main.scss">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet">
     <title>SASS</title>
   </head>
   <body>
     <header>
       <div class="topheader">
-        <img class="logo" src="/bilder/logoSCSS.svg" alt="" />
+        <img class="logo" src="/bilder/logoSCSS.svg" alt="">
         <h1 id="bigscreenheading">Mitt SASS-projekt</h1>
         <button
           id="openmenu"
@@ -27,14 +26,14 @@
           aria-expanded="false"
           aria-controls="navbar"
         >
-          <img src="/bilder/hamburgerblack.svg" alt="" />
+          <img src="/bilder/hamburgerblack.svg" alt="">
         </button>
       </div>
       <nav id="navbar">
         <ul>
           <li>
             <button id="closemenu" aria-label="Stäng meny">
-              <img src="/bilder/closehamburgerblack.svg" alt="" />
+              <img src="/bilder/closehamburgerblack.svg" alt="">
             </button>
           </li>
           <li><a href="/">Startsida</a></li>
@@ -47,6 +46,44 @@
     </header>
     <main>
       <h1 id="smallscreenheading">Mitt SASS-projekt</h1>
+      <section>
+        <h2>Reflektioner kring att arbeta med SASS</h2>
+        <div class="thoughts-on-sass">
+          <p>
+            Jag kan definitivt se värdet i att arbeta på det här sättet med CSS.
+            Även fast det var ovant att komma igång med arbetssättet så gick det
+            snabbt att vänja sig, eftersom det påminner mycket om hur man jobbar
+            i t.ex. JavaScript för att undvika redundans. Därför kändes
+            upplägget mer logiskt och strukturerat. Först var jag tveksam över
+            hur jag skulle komma igång, men jag fann att det var enklast att
+            jobba på som tidigare och försöka minska upprepningar allt eftersom.
+            I projekten vi gjort i slutet av kurserna har jag haft problem med
+            att strukturera min CSS-kod, och jag visste att det fanns kod där
+            som inte behövde finnas kvar längre p.g.a. ändringar som jag sedan
+            haft svårt att spåra i en enda stor CSS-fil. Jag var med andra ord
+            glad att äntligen få insyn i de verktyg som behövs för att förbättra
+            den delen av utvecklandet.
+          </p>
+          <p>
+            Användandet av mixins kan jag konceptuellt se värdet av när det
+            handlar om större projekt där det finns många olika komponenter, men
+            i fallet för denna uppgift tyckte jag det var svårt att implementera
+            på ett bra sätt. Jag är ärligt talat fortfarande inte helt säker på
+            om sättet jag gjort på är effektivt, men det kanske mest är för att
+            jag blev väldigt förtjust i användandet av extend! Dock var en
+            fördel med mixins att man kunde använda det över media queries,
+            eftersom att det är ett färdigt block med kod. Extends var
+            begränsade på det sättet då det inte var möjligt. Den största
+            nackdelen med detta arbetssätt är väl egentligen att SASS i sig
+            kräver lite mer än att bara skapa en vanlig CSS-fil. SASS behöver ju
+            till exempel kompileras, men efter att ha börjat arbeta med en mer
+            automatiserad process är det svårt att tänka sig att gå tillbaka
+            till hur jag arbetade förut. Därför tycker jag absolut att det är
+            värt att lära sig om SASS och andra verktyg som hjälper att ge
+            utvecklandet bättre struktur.
+          </p>
+        </div>
+      </section>
     </main>
     <footer>
       <p>Lab 3 - SASS</p>

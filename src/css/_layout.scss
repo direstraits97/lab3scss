@@ -119,6 +119,9 @@ section {
     }
   }
 }
+.thoughts-on-sass {
+  @extend article;
+}
 footer {
   padding: 2%;
   @include primary-colors($light-theme: true);
