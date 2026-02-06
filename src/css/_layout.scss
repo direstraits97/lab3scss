@@ -32,14 +32,54 @@ $dark-mode-primary-text-color: white;
   padding: 2%;
 }
 
+@mixin primary-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+  } @else {
+    background-color: $dark-mode-primary-background-color;
+    color: $dark-mode-primary-text-color;
+  }
+}
+
+@mixin darker-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $darker-primary-background-color;
+    color: $primary-text-color;
+  } @else {
+    background-color: $dark-mode-darker-primary-background-color;
+    color: $dark-mode-primary-text-color;
+  }
+}
+
+@mixin complementary-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $complementary-color;
+    color: $primary-text-color;
+  } @else {
+    background-color: $dark-mode-complementary-color;
+    color: $primary-text-color;
+  }
+}
+
+@mixin saturated-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $saturated-color;
+    color: $primary-text-color;
+  } @else {
+    background-color: $dark-mode-complementary-color;
+    color: $primary-text-color;
+  }
+}
+
 body {
   margin: 0;
-  background-color: $darker-primary-background-color;
+  @include darker-colors($light-theme: true);
 }
 .topheader {
   @extend %centercontentwithflex;
   @extend %paddingandspace;
-  background-color: $primary-background-color;
+  @include primary-colors($light-theme: true);
   justify-content: space-around;
 }
 .logo {
@@ -50,7 +90,7 @@ nav {
   width: 60%;
   @extend %centerchild;
   @extend %paddingandspace;
-  background-color: $complementary-color;
+  @include complementary-colors($light-theme: true);
   border-radius: 20px;
   ul {
     display: flex;
@@ -70,7 +110,7 @@ section {
     @extend %paddingandspace;
     flex-direction: column;
     border-radius: 20px;
-    background-color: $saturated-color;
+    @include saturated-colors($light-theme: true);
     img {
       width: 100%;
     }
@@ -81,7 +121,7 @@ section {
 }
 footer {
   padding: 2%;
-  background-color: $primary-background-color;
+  @include primary-colors($light-theme: true);
 }
 .activechoice {
   text-decoration: underline;
@@ -110,78 +150,20 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: $dark-mode-darker-primary-background-color;
-    color: $dark-mode-primary-text-color;
+    @include darker-colors($light-theme: false);
   }
   .topheader {
-    background-color: $dark-mode-primary-background-color;
+    @include primary-colors($light-theme: false);
   }
   nav {
-    background-color: $dark-mode-complementary-color;
+    @include complementary-colors($light-theme: false);
   }
   section {
     article {
-      background-color: $dark-mode-complementary-color;
-      color: $primary-text-color;
+      @include complementary-colors($light-theme: false);
     }
   }
   footer {
-    background-color: $dark-mode-primary-background-color;
-  }
-  .activechoice {
-    color: $primary-text-color;
-  }
-}
-
-@media (max-width: 1024px) {
-  section {
-    width: 80%;
-  }
-  .topheader {
-    justify-content: space-between;
-  }
-  #bigscreenheading {
-    display: none;
-  }
-  #smallscreenheading {
-    display: block;
-  }
-  #openmenu {
-    display: block;
-  }
-  #closemenu {
-    @extend #openmenu;
-  }
-  nav {
-    position: fixed;
-    top: 0;
-    border-radius: 0;
-    right: -110%;
-    z-index: 10;
-    transition: right 300ms ease-out;
-    height: 100vh;
-    width: 100vw;
-    ul {
-      flex-direction: column;
-      align-items: flex-end;
-      margin: 0;
-      height: 100vh;
-      justify-content: space-evenly;
-      a {
-        margin-right: 3rem;
-      }
-    }
-  }
-  .activechoice {
-    text-decoration: none;
-  }
-}
-@media (max-width: 600px) {
-  .logo {
-    width: 175px;
-    height: 175px;
-  }
-  section {
-    width: 90%;
+    @include primary-colors($light-theme: false);
   }
 }
