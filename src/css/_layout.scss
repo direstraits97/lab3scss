@@ -1,85 +1,13 @@
-@use "sass:color";
-
-$primary-background-color: rgb(222, 211, 226);
-$darker-primary-background-color: color.scale(
-  rgb(222, 211, 226),
-  $lightness: -30%
-);
-$complementary-color: color.complement(rgb(222, 211, 226));
-$saturated-color: color.scale(rgb(222, 211, 226), $saturation: 70%);
-$primary-text-color: black;
-
-$dark-mode-primary-background-color: rgb(59, 59, 59);
-$dark-mode-darker-primary-background-color: color.scale(
-  rgb(59, 59, 59),
-  $lightness: -50%
-);
-$dark-mode-complementary-color: color.scale(rgb(59, 59, 59), $lightness: 40%);
-$dark-mode-primary-text-color: white;
-
-%centerchild {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-%centercontentwithflex {
-  display: flex;
-  align-items: center;
-}
-
-%paddingandspace {
-  margin-bottom: 60px;
-  padding: 2%;
-}
-
-@mixin primary-colors($light-theme: true) {
-  @if $light-theme {
-    background-color: $primary-background-color;
-    color: $primary-text-color;
-  } @else {
-    background-color: $dark-mode-primary-background-color;
-    color: $dark-mode-primary-text-color;
-  }
-}
-
-@mixin darker-colors($light-theme: true) {
-  @if $light-theme {
-    background-color: $darker-primary-background-color;
-    color: $primary-text-color;
-  } @else {
-    background-color: $dark-mode-darker-primary-background-color;
-    color: $dark-mode-primary-text-color;
-  }
-}
-
-@mixin complementary-colors($light-theme: true) {
-  @if $light-theme {
-    background-color: $complementary-color;
-    color: $primary-text-color;
-  } @else {
-    background-color: $dark-mode-complementary-color;
-    color: $primary-text-color;
-  }
-}
-
-@mixin saturated-colors($light-theme: true) {
-  @if $light-theme {
-    background-color: $saturated-color;
-    color: $primary-text-color;
-  } @else {
-    background-color: $dark-mode-complementary-color;
-    color: $primary-text-color;
-  }
-}
+@use "base";
 
 body {
   margin: 0;
-  @include darker-colors($light-theme: true);
+  @include base.darker-colors($light-theme: true);
 }
 .topheader {
   @extend %centercontentwithflex;
   @extend %paddingandspace;
-  @include primary-colors($light-theme: true);
+  @include base.primary-colors($light-theme: true);
   justify-content: space-around;
 }
 .logo {
@@ -90,7 +18,7 @@ nav {
   width: 60%;
   @extend %centerchild;
   @extend %paddingandspace;
-  @include complementary-colors($light-theme: true);
+  @include base.complementary-colors($light-theme: true);
   border-radius: 20px;
   ul {
     display: flex;
@@ -110,7 +38,7 @@ section {
     @extend %paddingandspace;
     flex-direction: column;
     border-radius: 20px;
-    @include saturated-colors($light-theme: true);
+    @include base.saturated-colors($light-theme: true);
     img {
       width: 100%;
     }
@@ -124,13 +52,13 @@ section {
 }
 footer {
   padding: 2%;
-  @include primary-colors($light-theme: true);
+  @include base.primary-colors($light-theme: true);
 }
 .activechoice {
   text-decoration: underline;
 }
 a:hover {
-  text-decoration: underline;
+  @extend .activechoice;
 }
 .show {
   right: 0;
@@ -153,20 +81,20 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   body {
-    @include darker-colors($light-theme: false);
+    @include base.darker-colors($light-theme: false);
   }
   .topheader {
-    @include primary-colors($light-theme: false);
+    @include base.primary-colors($light-theme: false);
   }
   nav {
-    @include complementary-colors($light-theme: false);
+    @include base.complementary-colors($light-theme: false);
   }
   section {
     article {
-      @include complementary-colors($light-theme: false);
+      @include base.complementary-colors($light-theme: false);
     }
   }
   footer {
-    @include primary-colors($light-theme: false);
+    @include base.primary-colors($light-theme: false);
   }
 }
