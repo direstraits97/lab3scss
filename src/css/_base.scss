@@ -1,0 +1,77 @@
+@use "sass:color";
+
+//Variabler
+$color-background-primary: rgb(222, 211, 226);
+$color-background-secondary: color.scale(rgb(222, 211, 226), $lightness: -30%);
+$color-background-complementary: color.complement(rgb(222, 211, 226));
+$color-background-saturated: color.scale(rgb(222, 211, 226), $saturation: 70%);
+
+$color-background-dark-primary: rgb(59, 59, 59);
+$color-background-dark-secondary: color.scale(
+  rgb(59, 59, 59),
+  $lightness: -50%
+);
+$color-background-dark-complementary: color.scale(
+  rgb(59, 59, 59),
+  $lightness: 40%
+);
+
+$color-text-primary: black;
+$color-text-secondary: white;
+
+//Placeholders
+%centerchild {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%centercontentwithflex {
+  display: flex;
+  align-items: center;
+}
+
+%paddingandspace {
+  margin-bottom: 60px;
+  padding: 2%;
+}
+
+//Mixins
+@mixin primary-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $color-background-primary;
+    color: $color-text-primary;
+  } @else {
+    background-color: $color-background-dark-primary;
+    color: $color-text-secondary;
+  }
+}
+
+@mixin darker-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $color-background-secondary;
+    color: $color-text-primary;
+  } @else {
+    background-color: $color-background-dark-secondary;
+    color: $color-text-secondary;
+  }
+}
+
+@mixin complementary-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $color-background-complementary;
+    color: $color-text-primary;
+  } @else {
+    background-color: $color-background-dark-complementary;
+    color: $color-text-primary;
+  }
+}
+
+@mixin saturated-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $color-background-saturated;
+    color: $color-text-primary;
+  } @else {
+    background-color: $color-background-dark-complementary;
+    color: $color-text-primary;
+  }
+}
