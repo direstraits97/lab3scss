@@ -82,7 +82,42 @@ a:hover {
   @extend %centercontentwithflex;
   flex-direction: column;
 }
-
+#flyingobjectstart {
+  border: none;
+  padding: 1.5rem;
+  margin-top: 60px;
+  margin-bottom: 200px;
+  width: 250px;
+  height: 60px;
+  background-color: base.$color-button-start;
+  border-radius: 10px;
+  transition-duration: 1s;
+  @extend %centercontentwithflex;
+  justify-content: center;
+}
+#flyingobjectstart:hover {
+  background-color: base.$color-button-end;
+  width: 300px;
+  height: 80px;
+  cursor: pointer;
+}
+#movingobject {
+  animation-name: flyingObject;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+#textwithshadow {
+  background-color: base.$color-background-complementary;
+  @extend %paddingandspace;
+  border-radius: 10px;
+  animation-name: textWithShadow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
 @media (prefers-color-scheme: dark) {
   body {
     @include base.darker-colors($light-theme: false);
