@@ -19,6 +19,9 @@ $color-background-dark-complementary: color.scale(
 $color-text-primary: black;
 $color-text-secondary: white;
 
+$color-button-start: rgb(88, 138, 68);
+$color-button-end: color.scale(rgb(158, 241, 125), $lightness: 10%);
+
 //Placeholders
 %centerchild {
   margin-left: auto;
