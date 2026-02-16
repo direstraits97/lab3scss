@@ -36,6 +36,9 @@ nav {
 p {
   text-align: center;
 }
+#flyingobjectstart {
+  @extend %titlefontsamesize;
+}
 
 @media (max-width: 1024px) {
   h1 {

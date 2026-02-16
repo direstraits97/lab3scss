@@ -78,6 +78,10 @@ a:hover {
 #smallscreenheading {
   display: none;
 }
+#animationscontainer {
+  @extend %centercontentwithflex;
+  flex-direction: column;
+}
 
 @media (prefers-color-scheme: dark) {
   body {
