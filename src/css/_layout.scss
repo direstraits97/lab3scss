@@ -118,6 +118,19 @@ a:hover {
   animation-direction: alternate;
   animation-timing-function: linear;
 }
+#barchartcontainer {
+  position: relative;
+  @extend %centerchild;
+  @extend %paddingandspace;
+  background-color: base.$color-text-secondary;
+}
+#piechartcontainer {
+  position: relative;
+  @extend %centerchild;
+  @extend %paddingandspace;
+  background-color: base.$color-text-secondary;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     @include base.darker-colors($light-theme: false);

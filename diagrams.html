@@ -47,11 +47,25 @@
     </header>
     <main>
       <h1 id="smallscreenheading">Mitt SASS-projekt</h1>
+      <section>
+        <h2>Stapeldiagram - Top 6 sökta kurserna på Miun</h2>
+        <div id="barchartcontainer">
+          <canvas id="barchart"></canvas>
+        </div>
+      </section>
+      <section>
+        <h2>Cirkeldiagram - Top 5 sökta programmen på Miun</h2>
+        <div id="piechartcontainer">
+          <canvas id="piechart"></canvas>
+        </div>
+      </section>
     </main>
     <footer>
       <p>Lab 3 - SASS</p>
       <p>JOBA1602</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="/src/js/hamburger.js"></script>
+    <script type="module" src="/src/js/diagrams.js"></script>
   </body>
 </html>
