@@ -44,11 +44,6 @@ async function collectData() {
 /**
  * Skapar ett stapeldiagram med de sex mest sökta kurserna på Mittuniversitetet HT25
  *
- * Datat filtreras ut om objektet är av typen "Kurs", därefter sorteras innehållet i stigande ordning
- * baserat på totala antalet sökningar för att sedan vända ordning med hjälp av reverse(). Med hjälp av slice()
- * får man ut de sex första objekten. Name och applicantsTotal pushas in i nya variabler för att sedan användas
- * i "labels" och "data" där diagrammet skapas.
- *
  * @param {coursesAndPrograms[]} data - Array med kurser och program
  * @returns {void}
  */
@@ -69,6 +64,11 @@ function createBarChart(data) {
     courseApplicants.push(sortedCourse.applicantsTotal);
   });
 
+  /* Datat filtreras ut om objektet är av typen "Kurs", därefter sorteras innehållet i stigande ordning
+   baserat på totala antalet sökningar för att sedan vända ordning med hjälp av reverse(). Med hjälp av slice()
+   får man ut de sex första objekten. Name och applicantsTotal pushas in i nya variabler för att sedan användas
+   i "labels" och "data" där diagrammet skapas. */
+
   new Chart(barChart, {
     type: "bar",
     data: {
@@ -86,11 +86,6 @@ function createBarChart(data) {
 
 /**
  * Skapar ett cirkeldiagram med de fem mest sökta programmen på Mittuniversitetet HT25.
- *
- * Datat filtreras ut om objektet är av typen "Program", därefter sorteras innehållet i stigande ordning
- * baserat på totala antalet sökningar för att sedan vända ordning med hjälp av reverse(). Med hjälp av slice()
- * får man ut de fem första objekten. Name och applicantsTotal pushas in i nya variabler för att sedan användas
- * i "labels" och "data" där diagrammet skapas.
  *
  * @param {coursesAndPrograms[]} data - Array med kurser och program
  * @returns {void}
@@ -111,6 +106,11 @@ function createPieChart(data) {
 
     programApplicants.push(sortedProgram.applicantsTotal);
   });
+
+  /* Datat filtreras ut om objektet är av typen "Program", därefter sorteras innehållet i stigande ordning
+   baserat på totala antalet sökningar för att sedan vända ordning med hjälp av reverse(). Med hjälp av slice()
+   får man ut de fem första objekten. Name och applicantsTotal pushas in i nya variabler för att sedan användas
+   i "labels" och "data" där diagrammet skapas. */
 
   new Chart(pieChart, {
     type: "pie",
