@@ -97,6 +97,12 @@
     background-color: base.$color-background-dark-complementary;
     color: base.$color-text-primary;
   }
+  #searchbutton {
+    @extend #flyingobjectstart;
+  }
+  #searchbutton:hover {
+    @extend #flyingobjectstart, :hover;
+  }
 }
 @media (max-width: 600px) {
   #textwithshadow {

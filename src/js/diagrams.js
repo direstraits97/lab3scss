@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", collectData);
  * @async
  * @returns {Promise<void>}
  */
-
 async function collectData() {
   const url =
     "https://mallarmiun.github.io/Frontend-baserad-webbutveckling/Moment%205%20-%20Dynamiska%20webbplatser/statistik_sokande_ht25.json";
@@ -47,7 +46,6 @@ async function collectData() {
  * @param {coursesAndPrograms[]} data - Array med kurser och program
  * @returns {void}
  */
-
 function createBarChart(data) {
   const barChart = document.querySelector("#barchart");
   let content = data.filter((courseType) => courseType.type === "Kurs");
@@ -90,7 +88,6 @@ function createBarChart(data) {
  * @param {coursesAndPrograms[]} data - Array med kurser och program
  * @returns {void}
  */
-
 function createPieChart(data) {
   const pieChart = document.querySelector("#piechart");
   let content = data.filter((programType) => programType.type === "Program");

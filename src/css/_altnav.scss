@@ -43,6 +43,11 @@
   #mapcontainer {
     height: 500px;
   }
+  footer {
+    a {
+      margin-bottom: 30px;
+    }
+  }
 }
 @media (max-width: 600px) {
   .logo {

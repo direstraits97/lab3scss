@@ -53,6 +53,11 @@ section {
 footer {
   padding: 2%;
   @include base.primary-colors($light-theme: true);
+  @extend %centercontentwithflex;
+  flex-direction: column;
+  a {
+    color: base.$color-text-primary;
+  }
 }
 .activechoice {
   text-decoration: underline;
@@ -62,6 +67,9 @@ a:hover {
 }
 .show {
   right: 0;
+}
+.hidden {
+  visibility: hidden;
 }
 #openmenu {
   display: none;
@@ -177,5 +185,8 @@ a:hover {
   }
   footer {
     @include base.primary-colors($light-theme: false);
+    a {
+      color: base.$color-text-secondary;
+    }
   }
 }
