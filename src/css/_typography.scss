@@ -39,7 +39,12 @@ p {
 #flyingobjectstart {
   @extend %titlefontsamesize;
 }
-
+#search {
+  font-family: $font-content;
+}
+#searchbutton {
+  font-family: $font-content;
+}
 @media (max-width: 1024px) {
   h1 {
     font-size: 2.5rem;

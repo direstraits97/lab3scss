@@ -125,12 +125,41 @@ a:hover {
   background-color: base.$color-text-secondary;
 }
 #piechartcontainer {
-  position: relative;
-  @extend %centerchild;
-  @extend %paddingandspace;
-  background-color: base.$color-text-secondary;
+  @extend #barchartcontainer;
 }
-
+#search {
+  box-sizing: border-box;
+  width: 70%;
+  height: 50px;
+  @extend %paddingandspace;
+}
+#mapcontainer {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+#searchsection {
+  display: flex;
+  justify-content: space-evenly;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+#searchbutton {
+  border: none;
+  background-color: base.$color-button-start;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 50px;
+  width: 7rem;
+  transition-duration: 0.7s;
+}
+#searchbutton:hover {
+  background-color: base.$color-button-end;
+  cursor: pointer;
+}
 @media (prefers-color-scheme: dark) {
   body {
     @include base.darker-colors($light-theme: false);

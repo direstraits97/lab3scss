@@ -40,6 +40,9 @@
   .activechoice {
     text-decoration: none;
   }
+  #mapcontainer {
+    height: 500px;
+  }
 }
 @media (max-width: 600px) {
   .logo {
@@ -48,5 +51,15 @@
   }
   section {
     width: 90%;
+  }
+  #searchsection {
+    flex-direction: column;
+  }
+  #search {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #searchbutton {
+    @extend #search;
   }
 }
