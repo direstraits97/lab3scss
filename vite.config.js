@@ -9,6 +9,8 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         sass: resolve(__dirname, "sass.html"),
         animations: resolve(__dirname, "animations.html"),
+        maps: resolve(__dirname, "maps.html"),
+        diagrams: resolve(__dirname, "diagrams.html"),
       },
     },
   },

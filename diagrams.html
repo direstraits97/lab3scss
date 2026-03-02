@@ -13,7 +13,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet">
-    <title>SASS</title>
+    <title>Startsida</title>
   </head>
   <body>
     <header>
@@ -39,17 +39,24 @@
           <li><a href="/">Startsida</a></li>
           <li><a href="/sass">SASS</a></li>
           <li><a href="/maps">Kartor</a></li>
-          <li><a href="/diagrams">Diagram</a></li>
-          <li class="activechoice"><a href="/animations">Animationer</a></li>
+          <li class="activechoice"><a href="/diagrams">Diagram</a></li>
+          <li><a href="/animations">Animationer</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <h1 id="smallscreenheading">Mitt SASS-projekt</h1>
-      <section id="animationscontainer">
-        <h2 id="movingobject">Min Animation</h2>
-        <button id="flyingobjectstart">Klicka på mig!</button>
-        <p id="textwithshadow">Efter ett tag mådde jag illa av att leka med animationer!</p>
+      <section>
+        <h2>Stapeldiagram - Top 6 sökta kurserna på Miun</h2>
+        <div id="barchartcontainer">
+          <canvas id="barchart"></canvas>
+        </div>
+      </section>
+      <section>
+        <h2>Cirkeldiagram - Top 5 sökta programmen på Miun</h2>
+        <div id="piechartcontainer">
+          <canvas id="piechart"></canvas>
+        </div>
       </section>
     </main>
     <footer>
@@ -58,7 +65,8 @@
       <h4>Dokumentation</h4>
       <a href="https://lab5dokumentationjoba1602.netlify.app/">Dokumentation för JavaScript</a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="/src/js/hamburger.js"></script>
-    <script type="module" src="/src/js/animation.js"></script>
+    <script type="module" src="/src/js/diagrams.js"></script>
   </body>
 </html>
